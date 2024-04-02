@@ -307,7 +307,7 @@ class MultiLevel_Mesa:#(BaseScheduler):
             - Reverse Groups        
         
         '''
-        #calls non-recusursive function
+        #calls non-recursive function
         if self.group_net == False: 
             self._remove(agent)
         
@@ -513,7 +513,7 @@ class MultiLevel_Mesa:#(BaseScheduler):
         empty
         
         Params: 
-            processs - function to assess whether agents should be in same 
+            process - function to assess whether agents should be in same 
                        module
             args - arguments for process function
             shuffled - True or False; do agents need to be in random order
@@ -617,7 +617,7 @@ class MultiLevel_Mesa:#(BaseScheduler):
         Purpose: Buffer to update agents who are updated each step
         occurs after the step function of all the other agents
         
-        Params: agent_type identfies which agent should be updated
+        Params: agent_type identifies which agent should be updated
         
         '''
         const_ids = list(self.agents_by_type[agent_type].keys())
@@ -792,7 +792,7 @@ class MultiLevel_Mesa:#(BaseScheduler):
         
     def remove_link(self, agents):
         '''      
-        Remove links to master network based on agent initiatiation
+        Remove links to master network based on agent initiation
         
         Params: 
             agents - list of agent objects
@@ -912,12 +912,12 @@ class GroupAgent(Agent, MultiLevel_Mesa):
     
     def remove(self,subs_to_remove, min_for_group, reintroduce = True):
         '''
-        Concept - Allows agents to be removed form existing group-agent
+        Concept - Allows agents to be removed from existing group-agent
         
         Params: 
             - subs_to_remove list of agent objects
             - min_for_group -attribute of ML_Mesa class which determines
-            how many agents for a minum agent default is 2
+            how many agents for a minimum agent default is 2
         '''       
         
         
@@ -934,7 +934,7 @@ class GroupAgent(Agent, MultiLevel_Mesa):
             #Place agent back in multi_sched
             if reintroduce == True: 
                 for agent in self.sub_agents.values():
-                    #Mkae sure agents are still alive
+                    #Make sure agents are still alive
                     if agent.unique_id in self._agents.keys():
                         self.model.ml.multi_sched[agent.unique_id] = agent
                         self.reverse_groups[agent.unique_id][self.group_type].discard(self.unique_id)
@@ -1035,7 +1035,7 @@ class GroupAgent(Agent, MultiLevel_Mesa):
     
     def group_step(self, by_type = False, const_update = False):
         '''
-        Purpose: Exectue step function of group-agent and subagents
+        Purpose: Execute step function of group-agent and subagents
         
         Params: 
             by_type: either False or [list] indicating type of agents to execute
@@ -1071,7 +1071,7 @@ class GroupAgent(Agent, MultiLevel_Mesa):
                 agent.group_step()
             else:
                 #necessary for agent ghost who have not yet been removed from
-                #group_agent but still allive
+                #group_agent but still alive
                 if len(self.sub_agents.values()) < self.min_for_group:
                     agent.step()
                 else:                    
