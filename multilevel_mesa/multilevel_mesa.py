@@ -5,15 +5,15 @@ Created on Thu Nov 15 13:48:44 2018
 ML Mesa Module
 
 Purpose: To provide the management overhead for agent based models which 
-consists of several modules and heirarchies of agents
+consists of several modules and hierarchies of agents
 
 Concept: 
     ML_Mesa provides two options for ML Mesa. First, an explicit approach. 
 In this approach the user defines what process should occur and when agents 
 group together and reassess if the should stay together. Second, a network
-which defines what entwork attirbutes should cause and agent to group together. 
+which defines what network attributes should cause an agent to group together. 
 
-Each function has a description of what is does as well as embedded comments. 
+Each function has a description of what it does as well as embedded comments. 
 The main areas for the ML_Mesa Class are: 
     
     --Granular agent functions (line 70)
@@ -53,7 +53,7 @@ class MultiLevel_Mesa:#(BaseScheduler):
         self.agents_by_type = defaultdict(dict)
         #Dictionary of agents who are active for each time step
         self.multi_sched = OrderedDict()
-        #Minimum number of agent to eleminate a group agent
+        #Minimum number of agent to eliminate a group agent
         self.min = min_for_group
         #Counter for Group Agent tracking
         self.id_counter = 0
@@ -236,7 +236,7 @@ class MultiLevel_Mesa:#(BaseScheduler):
     
     def _remove(self, agent):
         '''
-        Non recursive verion of remove, allows for faster processing,
+        Non recursive version of remove, allows for faster processing,
         if group can't become agent
         
         Parameter: Agent object
@@ -441,7 +441,7 @@ class MultiLevel_Mesa:#(BaseScheduler):
         Helper function for form_group
         
         Concept:
-            Groups agents who should form a group together in a list os tuples
+            Groups agents who should form a group together in a list of tuples
             Checks to ensure agent is still alive   
         '''
         for agent in agents[:]:
@@ -815,7 +815,7 @@ class GroupAgent(Agent, MultiLevel_Mesa):
     GroupAgent
     
     Class which provides GroupAgents functions.
-    This porvides the ability to manage the GroupAgents which form and bring in 
+    This provides the ability to manage the GroupAgents which form and bring in 
     group_agent functions
     
     There are two main area of functions
