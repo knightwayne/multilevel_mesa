@@ -64,10 +64,10 @@ Keyword parameters:
 Six Managers: 
 
 1. MultiLevel_Mesa.\_agents which is an ordered dictionary (a hash-table consisting of a key:value pair) that holds every agent added to the instance
-2. MultiLevel_Mesa.net is an instance of a NewtorkX graph. This feature provides the critical structure for tracking and managing agents and groups.
+2. MultiLevel_Mesa.net is an instance of a NetworkX graph. This feature provides the critical structure for tracking and managing agents and groups.
 3. MultiLevel_Mesa.agents_by_type uses a dictionary of dictionaries to track agents by type. This feature allows for faster reference of specific types of agents when manipulating groups or schedules.
 4. MultiLevel_Mesa.schedule replaces the Mesa schedule and is an ordered dictionary which manages the agents and when they execute a step function. 
-5. MultiLevel_Mesa.groups is an ordered dictionary and tracks the groups within the model performing the same function of tracking groups as the agents ordered dictionary.
+5. MultiLevel_Mesa.groups is an ordered dictionary and tracks the groups within the model performing the same function of tracking groups as the agent's ordered dictionary.
 6. MultiLevel_Mesa.reverse_groups is a dictionary of dictionaries of sets. The first dictionary key is the agent id, while the second is group types (link and link values) and the set is the group ids to which the agent belongs in those group types.  
 
 ## The Multi-level Mesa Functions
